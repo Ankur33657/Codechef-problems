@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int func(string z){
+    int bal=0;
+    int max_bal = 0;
+    for(int i=0;i<z.length();i++){
+        if(z[i]=='('){
+            bal++;
+        }
+        else bal--;
+        max_bal=max(max_bal,bal);
+    }
+    return max_bal;
+}
+int main(){
+   int t;
+   cin>>t;
+   while(t--){
+       string s;
+       cin>>s;
+       int w = func(s);
+       for(int i=0;i<w;i++){
+           cout<<"(";
+       }
+       for(int i=0;i<w;i++){
+           cout<<")";
+       }
+       cout<<endl;
+   }
+}
