@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+#define ll long long int
+int main(){
+  ll t;
+  cin>>t;
+  while(t--){
+   ll n,cnt_neg=0,cnt_pos=0;
+   cin>>n;
+   vector<ll> vec;
+   for(ll i=0;i<n;i++){
+      ll temp;
+      cin>>temp;
+       vec.push_back(temp);
+      if(temp==0){
+          continue;
+      }
+      else if(temp<0){
+          cnt_neg++;
+      }
+      else
+      cnt_pos++;
+   }
+   cout<<(cnt_neg*(cnt_neg-1))/2 + (cnt_pos*(cnt_pos-1))/2<<endl;
+  }
+  
+}
